@@ -2,8 +2,8 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from tensorflow.python.keras.utils.np_utils import to_categorical
 from tensorflow.keras.datasets import mnist
+from tensorflow.python.keras.utils.np_utils import to_categorical
 
 size_img = 28
 threshold_color = 100 / 255
@@ -78,7 +78,6 @@ def colab_fetch_mnist():
     x_val = np.reshape(x_val, (-1, 28, 28, 1))
 
     y_train = to_categorical(y_train)
-    y_test = to_categorical(y_test)
     y_val = to_categorical(y_val)
 
     print(f"Features : {n_features_train}")
@@ -88,5 +87,7 @@ def colab_fetch_mnist():
     print(f"y_train shape : {y_train.shape}")
     print(f"x_test shape : {x_test.shape}")
     print(f"y_test shape : {y_test.shape}")
+    print(f"x_val shape : {x_val.shape}")
+    print(f"y_val shape : {y_val.shape}")
 
     return x_train, y_train, x_test, y_test, x_val, y_val
