@@ -9,14 +9,14 @@ x_train = x_train.reshape((-1, 784))
 x_test = x_test.reshape((-1, 784))
 
 # SVM Model 1
-def model_poly_SVM():
+def model_poly():
     X_train, _, Y_train, _ = train_test_split(x_train, y_train, train_size=0.3)
     model_SVC = SVC(kernel='poly')
     model_SVC.fit(X_train, Y_train)
     return model_SVC
 
 # SVM Model 2
-def model_rbf_SVM():
+def model_rbf():
     X_train, _, Y_train, _ = train_test_split(x_train, y_train, train_size=0.3)
     model_SVC = SVC(kernel='rbf')
     model_SVC.fit(X_train, Y_train)
